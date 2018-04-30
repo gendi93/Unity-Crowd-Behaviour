@@ -1,25 +1,86 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Agent Based Modelling</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>  
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json", {onProgress: UnityProgress});
-    </script>
-  </head>
-  <body>
-    <div class="webgl-content">
-      <div id="gameContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">Agent Based Modelling</div>
-      </div>
-    </div>
-  </body>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Unity Crowd Behaviour | Social Force Model</title>
+	<link rel="shortcut icon" href="TemplateData/abm_logo.ico">
+	<script src="TemplateData/UnityProgress.js"></script>
+	<script src="Build/UnityLoader.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+	<link rel="stylesheet" href="TemplateData/styles.css">
+	<script>
+		var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json", { onProgress: UnityProgress });
+	</script>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="top">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand"><h1>Agent-Based Crowd Modelling</h1></a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-nav-demo">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="documentation.html">Documentation <i class="fas fa-book"></i></a></li>
+					<li><a href="https://github.com/gendi93/Unity-Crowd-Behaviour">Github <i class="fab fa-github"></i></a></li>
+					<li><a href="https://github.com/gendi93/Unity-Crowd-Behaviour/archive/master.zip">Download <i class="fas fa-download"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 definition">
+				<h4>Complex system behaviour arising from the sum of the simple agent behaviours.</h4>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<h4>Natural Description Of The System</h4>
+				<p>
+					Past attempts to describe the behaviour of crowds involved treating them as fluid bodies and modelling them as such using, for example, Maxwell-Boltzmann distributions or the Navier-Stokes equation. Describing the behaviour of individual agents however, is more <strong>intuitive</strong> than describing that of a crowd; this is known as microscopic, as opposed to macroscopic, modelling and can provide a better understanding of naturally occuring phenomena.
+				</p>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<h4>Capturing Emergent Behaviour</h4>
+				<p>
+					By defining how individual agents interact with those around them and assigning targets, complex, and often realistic, behaviours are said to emerge. When two groups of people move towards each other, individuals naturally follow those in front of them to avoid bumping into others. Steady lanes form in the flow of people and their movement becomes <strong>ordered</strong>.
+				</p>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<h4>Decentralised Swarm Intelligence</h4>
+				<p>
+					Local interactions between agents and their environment, whilst unknown to them, result in a global, <strong>self-organising</strong> system. This kind of artificial intelligence resembles real conditions observed at street crossings and other high density situations.
+				</p>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<h4>Flexible Approach To A Solution</h4>
+				<p>
+					Modifying or adding new behaviour to agents is an easy task with immediate, visible results on the behaviour of the system.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="webgl-content" style="width: 100%; height: 100%">
+					<div id="gameContainer"></div>
+					<div class="footer">
+						<div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+						<div class="title">Unity Crowd Behaviour</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
 </html>

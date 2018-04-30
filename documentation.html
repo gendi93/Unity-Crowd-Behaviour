@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Unity Crowd Behaviour | Social Force Model</title>
+	<link rel="shortcut icon" href="TemplateData/abm_logo.ico">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+	<link rel="stylesheet" href="TemplateData/styles.css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="top">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html" class="navbar-brand"><h1>Agent-Based Crowd Modelling</h1></a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-nav-demo">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a>Documentation <i class="fas fa-book"></i></a></li>
+					<li><a href="https://github.com/gendi93/Unity-Crowd-Behaviour">Github <i class="fab fa-github"></i></a></li>
+					<li><a href="https://github.com/gendi93/Unity-Crowd-Behaviour/archive/master.zip">Download <i class="fas fa-download"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container documentation">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h2>Parameter Documentation</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<h4>Speed</h4>
+				<img src="TemplateData/gifs/speed.gif" width="100%">
+				<p>
+					By default, agents' speeds are normally distributed with mean 1.2 m/s and standard deviation 0.6 m/s. The speeds can be fixed for all agents by clicking on the 'Fixed Speed' checkbox, this then enables the user to select a speed.
+				</p>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<h4>Radius</h4>
+				<img src="TemplateData/gifs/radius.gif" width="100%">
+				<p>
+					Agents' radii are also normally distributed, this time with mean 0.25 m and standard deviation 0.1 m. The radii can be fixed for all agents by clicking on the 'Fixed Radius' checkbox, this again enables the user to select a radius.
+				</p>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<h4>Randomness</h4>
+				<img src="TemplateData/gifs/random.gif" width="100%">
+				<p>
+					In order to avoid situations of perfect symmetry, where two agents might meet head on and get stuck repelling each other along their line of movement forever, a random force is added perpendicular to their direction of movement. The random force can vary between 1 N and the value selected by the user. By default, a random force between 1 - 500 N is applied to all agents.
+				</p>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<h4>Interaction Strength</h4>
+				<img src="TemplateData/gifs/force.gif" width="100%">
+				<p>
+					This is the strength of the 'social force' being applied to the agent as a result of other agents being within their personal space zone. The 'social force' takes the form: <br />
+					<strong>F = A x e<sup>(r<sub>αβ</sub> - d<sub>αβ</sub>)</sup></strong>, where <strong>A</strong> is the interaction strength, <strong>r<sub>αβ</sub></strong> is the sum of the radii of agents <strong>α</strong> and <strong>β</strong> and <strong>d<sub>αβ</sub></strong> is the distance between agents <strong>α</strong> and <strong>β</strong>. The default setting for this parameter is 1500 N.
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<h4>Repulsion Type</h4>
+				<img src="TemplateData/gifs/repel.gif" width="100%">
+				<p>
+					By default, all agents repel all other agents in the simulation, however they can be made to only reject agents of the opposite colour, or none at all.
+				</p>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<h4>Gap Width</h4>
+				<img src="TemplateData/gifs/gap.gif" width="100%">
+				<p>
+					This parameter controls the width of the opening in the wall separating the two groups of agents and is set to 1.5 m by default.
+				</p>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<h4>Personal Space</h4>
+				<img src="TemplateData/gifs/personal.gif" width="100%">
+				<p>
+					The personal space of an agent is the distance they want to maintain from other agents. Practically speaking, this is the threshold distance at which the 'social force' is applied. By default, this is set to 30 cm.
+				</p>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<h4>Agent Count</h4>
+				<img src="TemplateData/gifs/count.gif" width="100%">
+				<p>
+					This controls the number of agents present on either side of the separating wall. By default there are 30 agents on both sides.
+				</p>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
